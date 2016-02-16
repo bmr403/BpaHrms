@@ -10,7 +10,7 @@
         http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd">
     
     
-   <import resource="classpath:applicationContext.xml" />
+   <import resource="applicationContext.xml" />
    
     <!-- <import resource="file:**/webapp/WEB-INF/applicationContext.xml" /> -->
 	<mvc:annotation-driven />
