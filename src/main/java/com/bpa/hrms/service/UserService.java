@@ -7,7 +7,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.bpa.hrms.repository.UserDAO;
-import com.bpa.hrms.testutil.LoginServiceTest;
 import com.bpa.hrms.entity.User;
 
 @Service("UserService")
