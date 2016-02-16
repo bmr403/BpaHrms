@@ -534,15 +534,15 @@
 						</goals>
 
 						<skip>false</skip>
-						<from>manjunath@bpatech.com</from>
+						<from>atoc@bpatech.com</from>
 						<subject>BpaHrmsIntegrationTest JUnit Test Results</subject>
 						<failonerror>false</failonerror>
 						<mailhost>mail.bpatech.com</mailhost>
 						<mailport>25</mailport>
-						<mailuser>manjunath@bpatech.com</mailuser>
-						<mailpassword>M@njun@7h</mailpassword>
+						<mailuser>atoc@bpatech.com</mailuser>
+						<mailpassword>@70Cm@!l</mailpassword>
 						<receivers>
-							<receiver>manjunath@bpatech.com</receiver>
+							<receiver>satyadev.addepally@matrixcos.com</receiver>
 						</receivers>
 						<htmlMessageFile>
 							${basedir}/target/site/surefire-report.html
