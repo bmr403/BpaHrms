@@ -2,14 +2,11 @@ package com.bpa.hrms.controller;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -29,10 +26,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.bpa.hrms.service.RoleService;
-import com.bpa.hrms.controller.RoleController;
 import com.bpa.hrms.entity.Role;
 import com.bpa.hrms.entity.User;
+import com.bpa.hrms.service.RoleService;
 
 
 
