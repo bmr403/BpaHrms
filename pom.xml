@@ -542,7 +542,7 @@
 						<mailuser>atoc@bpatech.com</mailuser>
 						<mailpassword>@70Cm@!l</mailpassword>
 						<receivers>
-							<receiver>satyadev.addepally@matrixcos.com</receiver>
+							<receiver>manjunath@bpatech.com</receiver>
 						</receivers>
 						<htmlMessageFile>
 							${basedir}/target/site/surefire-report.html
