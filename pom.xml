@@ -1,9 +1,8 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>BpaHrmsIntegrationTest</groupId>
 	<artifactId>BpaHrmsIntegrationTest</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.1</version>
 	<packaging>war</packaging>
 
 
@@ -127,11 +126,11 @@
 			<version>${org.springframework.version}</version>
 			<scope>test</scope>
 		</dependency>
-		<dependency>
+		<!-- <dependency>
 			<groupId>org.apache.commons</groupId>
 			<artifactId>commons-io</artifactId>
 			<version>1.3.2</version>
-		</dependency>
+		</dependency> -->
 
 		<dependency>
 			<groupId>commons-dbcp</groupId>
@@ -365,11 +364,11 @@
 			<version>${cxf.version}</version>
 		</dependency>
 
-		<dependency>
+		<!-- <dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-test</artifactId>
 			<version>${org.springframework.version}</version>
-		</dependency>
+		</dependency> -->
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-context</artifactId>
@@ -411,7 +410,34 @@
 			<version>0.8.1</version>
 			<scope>test</scope>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/com.lowagie/itext -->
+<dependency>
+    <groupId>com.lowagie</groupId>
+    <artifactId>itext</artifactId>
+    <version>2.1.7</version>
+</dependency>
+
 	</dependencies>
+		<scm>
+		<connection>scm:git:https://none</connection>
+		<developerConnection>scm:git:https://none</developerConnection>
+		<url>scm:git:https://none</url>
+	  <tag>BpaHrmsIntegrationTest-0.0.1</tag>
+  </scm>
+	
+	<distributionManagement>
+		<repository>
+			<id>nexus</id>
+			<name>Nexus Repository</name>
+			<url>http://127.0.0.1:8081/nexus/content/repositories/releases/</url>
+		</repository>
+		<snapshotRepository>
+			<id>nexus</id>
+			<name>Nexus Repository</name>
+			<url>http://127.0.0.1:8081/nexus/content/repositories/snapshots/</url>
+		</snapshotRepository>
+	</distributionManagement>
+	
 	<build>
 		<finalName>BpaHrmsIntegrationTest</finalName>
 		<pluginManagement>
@@ -439,7 +465,7 @@
 						</execution>
 					</executions>
 				</plugin>
-				<plugin>
+				<!-- <plugin>
 					<groupId>org.codehaus.mojo</groupId>
 					<artifactId>build-helper-maven-plugin</artifactId>
 					<executions>
@@ -456,16 +482,16 @@
 							</configuration>
 						</execution>
 					</executions>
-				</plugin>
-				<plugin>
+				</plugin> -->
+				<!-- <plugin>
 					<artifactId>maven-assembly-plugin</artifactId>
 					<configuration>
 						<descriptorRefs>
 							<descriptorRef>jar-with-dependencies</descriptorRef>
 						</descriptorRefs>
 					</configuration>
-				</plugin>
-				<plugin>
+				</plugin> -->
+				<!-- <plugin>
 					<groupId>org.codehaus.mojo</groupId>
 					<artifactId>tomcat-maven-plugin</artifactId>
 					<configuration>
@@ -475,7 +501,7 @@
 						<password>admin</password>
 						<path>/BpaHrmsIntegrationTest</path>
 					</configuration>
-				</plugin>
+				</plugin> -->
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-compiler-plugin</artifactId>
@@ -523,45 +549,28 @@
 					</dependencies>
 
 				</plugin>
+				
+				
 				<plugin>
-					<groupId>ch.fortysix</groupId>
-					<artifactId>maven-postman-plugin</artifactId>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-war-plugin</artifactId>
+					<version>2.4</version>
 					<configuration>
-						<id>send surefire notification</id>
-						<phase>site</phase>
-						<goals>
-							<goal>surefire-mail</goal>
-						</goals>
-
-						<skip>false</skip>
-						<from>atoc@bpatech.com</from>
-						<subject>BpaHrmsIntegrationTest JUnit Test Results</subject>
-						<failonerror>false</failonerror>
-						<mailhost>mail.bpatech.com</mailhost>
-						<mailport>25</mailport>
-						<mailuser>atoc@bpatech.com</mailuser>
-						<mailpassword>@70Cm@!l</mailpassword>
-						<receivers>
-							<receiver>manjunath@bpatech.com</receiver>
-						</receivers>
-						<htmlMessageFile>
-							${basedir}/target/site/surefire-report.html
-						</htmlMessageFile>
+						<warSourceDirectory>src/main/webapp</warSourceDirectory>
+						<failOnMissingWebXml>false</failOnMissingWebXml>
 					</configuration>
-					<executions>
-						<execution>
-							<id>send surefire notification</id>
-							<phase>site</phase>
-							<goals>
-								<goal>surefire-mail</goal>
-							</goals>
-							<configuration>
-								<subject>BpaHrmsIntegrationTest JUnit Test Results</subject>
-								<groovyCondition><![CDATA[errors > 0 || skipped > 0 || failures > 0]]></groovyCondition>
-							</configuration>
-						</execution>
-					</executions>
 				</plugin>
+				<plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-release-plugin</artifactId>
+        <version>2.5.3</version>
+		<configuration>
+        <checkModificationExcludes>
+            <checkModificationExclude>pom.xml</checkModificationExclude>
+			<checkModificationExclude>target/**</checkModificationExclude>
+        </checkModificationExcludes>
+    </configuration>
+      </plugin>
 			</plugins>
 
 		</pluginManagement>
