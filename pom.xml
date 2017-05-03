@@ -419,9 +419,9 @@
 
 	</dependencies>
 		<scm>
-		<connection>scm:git:https://none</connection>
-		<developerConnection>scm:git:https://none</developerConnection>
-		<url>scm:git:https://none</url>
+		<connection>scm:git:https://github.com/bmr403/BpaHrms.git</connection>
+		<developerConnection>scm:git:https://github.com/bmr403/BpaHrms.git</developerConnection>
+		<url>scm:git:https://github.com/bmr403/BpaHrms.git</url>
 	  <tag>BpaHrmsIntegrationTest-0.0.1</tag>
   </scm>
 	
